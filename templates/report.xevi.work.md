@@ -1,4 +1,4 @@
-# 📊 LangShake vs Traditional Crawling – Data Appendix
+# 📊 LangShake vs Traditional Crawling Report
 
 **Domain:** `https://xevi.work`  
 **Total Pages Crawled:** `8`  
