@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "modules": [
+    "/langshake/all-schemas.json"
+  ],
+  "verification": {
+    "strategy": "merkle",
+    "merkleRoot": "ca5c1924168079fc15e9d1f30c52a6a85bd5693096f96559c7c834261367172d",
+    "lastVerified": "2025-05-05"
+  }
+}

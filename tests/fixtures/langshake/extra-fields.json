@@ -1,0 +1,21 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Article with Extra Fields",
+    "url": "https://example.com/extra-fields.html",
+    "author": { "@type": "Person", "name": "Alice" },
+    "extraField1": "extra value 1",
+    "debug": 42
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "Product",
+    "name": "Widget with Extra",
+    "url": "https://example.com/extra-fields.html",
+    "brand": { "@type": "Brand", "name": "BrandX" },
+    "extraField2": { "foo": "bar" },
+    "notes": ["note1", "note2"]
+  },
+  { "checksum": "dummy-checksum-for-test" }
+] 

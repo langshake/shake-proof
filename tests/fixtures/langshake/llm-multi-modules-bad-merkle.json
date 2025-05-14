@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "modules": [
+    "/langshake/article-bad-checksum.json",
+    "/langshake/products.json"
+  ],
+  "verification": {
+    "strategy": "merkle",
+    "merkleRoot": "BAD-MERKLE-ROOT-EXAMPLE",
+    "lastVerified": "2025-05-05"
+  }
+} 

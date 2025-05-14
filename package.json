@@ -1,0 +1,32 @@
+{
+  "name": "langshake-projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cheerio": "^1.0.0",
+    "filesize": "^10.1.6",
+    "handlebars": "^4.7.8",
+    "inquirer": "^9.2.16",
+    "minimist": "^1.2.8",
+    "p-limit": "^4.0.0",
+    "prettier": "^3.5.3",
+    "pretty-ms": "^9.2.0",
+    "selenium-webdriver": "^4.32.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.26.0",
+    "vitest": "^3.1.2"
+  },
+  "type": "module",
+  "bin": {
+    "shakeproof": "./src/cli/menu.js"
+  }
+}

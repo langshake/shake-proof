@@ -1,0 +1,48 @@
+# 📊 LangShake vs Traditional Crawling – Data Appendix
+
+**Domain:** `{{domainRoot}}`  
+**Total Pages Crawled:** `{{summary.totalPages}}`  
+**Schemas Match:** {{#if summary.allMatch}}✅ Yes{{else}}❌ No{{/if}}  
+**Merkle Roots Match:** {{#if summary.merkleRootsMatch}}✅ Yes{{else}}❌ No{{/if}}  
+**LangShake Merkle Root Valid:** {{#if summary.merkleRootLangshakeValid}}✅{{else}}❌{{/if}}  
+**Traditional Merkle Root Valid:** {{#if summary.merkleRootTraditionalValid}}✅{{else}}❌{{/if}}
+
+---
+
+## 📈 Benchmark Summary Table
+
+| Metric                        | LangShake             | Traditional Crawling   | Diff / Savings            |
+|------------------------------|------------------------|-------------------------|----------------------------|
+| ⏱️ Total Duration            | {{metrics.langshake.timing.durationMs}}                | {{metrics.traditional.timing.durationMs}}               | {{metricsDiff.duration}}             |
+| 🧠 CPU Time (User+System)    | {{metrics.langshake.cpu.total}}             | {{metrics.traditional.cpu.total}}             | {{metricsDiff.cpu}}     |
+| 💾 Peak Memory (RSS)         | {{metrics.langshake.memory.peakRss}}               | {{metrics.traditional.memory.peakRss}}               | {{metricsDiff.memory}}     |
+| 🌐 Total Downloaded Data     | {{metrics.langshake.requests.totalBytesDownloaded}}               | {{metrics.traditional.requests.totalBytesDownloaded}}               | {{metricsDiff.bytes}}         |
+| 🌐 Requests Made             | {{metrics.langshake.requests.total}}                     | {{metrics.traditional.requests.total}}                      | {{metricsDiff.requests}}                    |
+| 🚀 Avg Request Time          | {{metrics.langshake.requests.avgRequestTimeMs}}                | {{metrics.traditional.requests.avgRequestTimeMs}}               | {{metricsDiff.avgRequestTime}}|
+| 📦 Download RPS              | {{metrics.langshake.requests.rps}} req/s            | {{metrics.traditional.requests.rps}} req/s             | {{metricsDiff.rps}}             |
+| 🧵 Max Concurrency           | {{metrics.langshake.concurrency.max}}               | {{metrics.traditional.concurrency.max}}               | {{#if (eq metrics.langshake.concurrency.max metrics.traditional.concurrency.max)}}Same{{else}}{{metrics.langshake.concurrency.max}} vs {{metrics.traditional.concurrency.max}}{{/if}} |
+| 📊 Status Codes              | {{metrics.langshake.requests.statusCodes}}          | {{metrics.traditional.requests.statusCodes}}           | - |
+| ❌ Errors Encountered        | {{metrics.langshake.errors.total}}                     | {{metrics.traditional.errors.total}}                      | {{#if (and (eq metrics.langshake.errors.raw 0) (eq metrics.traditional.errors.raw 0))}}✅ Stable on both sides{{else}}See details{{/if}}    |
+| ✅ Schemas Match             | {{#if summary.allMatch}}✅ All Match{{else}}❌ Mismatch{{/if}}           | {{#if summary.allMatch}}✅ All Match{{else}}❌ Mismatch{{/if}}            | {{#if summary.allMatch}}✅ Equivalent Accuracy{{else}}❌{{/if}}     |
+
+---
+
+## 🔍 Per-Page Checksums
+
+| Page URL | Checksum Match | LangShake Checksum | Traditional Checksum |
+|----------|----------------|--------------------|-----------------------|
+{{#each pages}}
+| [{{url}}]({{url}}) | {{#if comparison.schemasMatch}}✅{{else}}❌{{/if}} | `{{comparison.langshakeChecksum}}` | `{{comparison.traditionalChecksum}}` |
+{{/each}}
+
+---
+
+## 🛡️ Merkle Roots Validation
+
+```json
+{
+  "LangShake": "{{summary.merkleRootLangshake}}",
+  "Traditional": "{{summary.merkleRootTraditional}}",
+  "LlmJson": "{{summary.merkleRootLlmJson}}"
+}
+``` 

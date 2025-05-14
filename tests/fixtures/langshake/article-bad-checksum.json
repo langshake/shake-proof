@@ -1,0 +1,32 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "LangShake: Revolutionizing LLM Training Data",
+    "author": {
+      "@type": "Person",
+      "name": "Jane Doe"
+    },
+    "datePublished": "2024-05-01",
+    "description": "A deep dive into how LangShake is changing the landscape of language model training data.",
+    "image": "https://example.com/images/langshake-article.jpg",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LangShake News",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/images/logo.png"
+      }
+    },
+    "keywords": [
+      "LLM",
+      "benchmark",
+      "web scraping",
+      "protocol"
+    ],
+    "url": "https://example.com/article.html"
+  },
+  {
+    "checksum": "BAD-CHECKSUM-EXAMPLE"
+  }
+] 

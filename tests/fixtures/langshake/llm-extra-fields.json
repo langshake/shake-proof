@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "modules": [
+    "/langshake/extra-fields.json"
+  ],
+  "verification": {
+    "strategy": "merkle",
+    "merkleRoot": "dummy-merkle-root-extra-fields",
+    "lastVerified": "2025-05-05"
+  }
+} 

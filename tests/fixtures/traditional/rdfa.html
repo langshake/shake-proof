@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>RDFa Test</title></head>
+<body>
+  <div vocab="https://schema.org/" typeof="Person">
+    <span property="name">John Doe</span>
+    <a property="url" href="/john">Website</a>
+  </div>
+  <div vocab="https://schema.org/">
+    <div typeof="Article">
+      <span property="headline">Test Article</span>
+      <span property="author" typeof="Person">
+        <span property="name">Jane Smith</span>
+      </span>
+      <time property="datePublished" datetime="2023-04-24">April 24, 2023</time>
+    </div>
+  </div>
+</body>
+</html> 
