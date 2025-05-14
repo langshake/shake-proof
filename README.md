@@ -128,7 +128,7 @@ console.log(result.human); // Human-readable summary
 
 After each benchmark run, Shakeproof automatically generates a detailed markdown report summarizing the comparison between LangShake and traditional crawling. This report includes side-by-side metrics, performance savings, per-page checksums, and Merkle root validation, providing a clear, human-readable overview of extraction speed, resource usage, and data integrity.
 
-See an example: [output/report.xevi.work.md](output/report.xevi.work.md)
+See an example: [Shakeproof Benchmark Report Sample](https://github.com/langshake/shake-proof/blob/main/templates/report.xevi.work.md)
 
 ## Architecture Overview
 
