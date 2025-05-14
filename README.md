@@ -4,7 +4,7 @@
 
 > This project empowers developers, webmasters, and AI platform integrators to validate, trust, and optimize the way web data is shared with LLMs and agents.
 
-## 🚀 What Is LangShake?
+## What Is LangShake?
 
 **LangShake** introduces `.well-known/llm.json` and per-page JSON modules to allow any website to expose **clean**, **verifiable**, **schema.org-compliant** data—without bloating the HTML or risking misinterpretation.
 
@@ -14,27 +14,27 @@ This CLI measures:
 - **Trustworthiness** (via checksum & Merkle tree validation)
 - **Real-world crawl performance** (across static and dynamic content)
 
-## 🧩 Features
+## Features
 
-### ✅ Compare Crawling Methods
+### Compare Crawling Methods
 - **Traditional Scraping**: Extracts Schema.org data from raw HTML (including dynamic React/Next.js content).
 - **LangShake Protocol**: Uses `.well-known/llm.json` and verified JSON modules for direct data access.
 
-### 🔍 Validates Integrity
+### Validates Integrity
 - Verifies each JSON module's **SHA-256 checksum**
 - Recalculates and confirms the **Merkle root** from all modules
 
-### 📊 Benchmarking Metrics
+### Benchmarking Metrics
 - Extraction time (per page and per method)
 - Schema match validation
 - Trust pass/fail reports
 - Resource usage metrics (CPU, memory, bandwidth)
 
-### 🧪 Extensive Testing
+### Extensive Testing
 - Fixture-driven Vitest test suite (real extraction, error cases, checksum logic)
 - CLI and SDK are covered with integration and unit tests
 
-## 🛠 Installation
+## Installation
 
 ```bash
 git clone https://github.com/langshake/shake-proof
@@ -43,7 +43,7 @@ npm install
 npm link   # For global CLI access (development)
 ```
 
-## ⚙️ Usage
+## Usage
 
 ### CLI
 
@@ -74,7 +74,7 @@ console.log(result.json);  // Machine-readable
 console.log(result.human); // Human-readable summary
 ```
 
-## 📤 Output Format (JSON)
+## Output Format (JSON)
 
 ```json
 {
@@ -112,7 +112,7 @@ console.log(result.human); // Human-readable summary
 }
 ```
 
-## 📦 Architecture Overview
+## Architecture Overview
 
 ```
 shake-proof/
@@ -145,7 +145,7 @@ shake-proof/
 │       └── langshake/        # JSON fixture files for langshake protocol
 ```
 
-## 📈 Metrics Collected
+## Metrics Collected
 
 | Category     | Metric                                                                                 |
 | ------------ | --------------------------------------------------------------------------------------- |
@@ -157,7 +157,7 @@ shake-proof/
 | ❗ Errors     | Error count, error details (per URL and message)                                        |
 | 🧵 Concurrency| Max parallel requests observed                                                          |
 
-## 🧪 Testing
+## Testing
 
 Run all tests:
 
@@ -173,7 +173,7 @@ Test coverage includes:
 * CLI user flows (mocked)
 * Fixture checksum recalculation
 
-## 📘 About the LangShake Protocol
+## About the LangShake Protocol
 
 LangShake is a dual-layer micro-standard for machine-readable web content:
 
@@ -183,13 +183,13 @@ LangShake is a dual-layer micro-standard for machine-readable web content:
 
 Learn more: [whitepaper](https://github.com/langshake/langshake.github.io/blob/master/whitepaper.md)
 
-## 🧰 Companion Tool: LangshakeIt CLI
+## Companion Tool: LangshakeIt CLI
 
-To generate `.well-known/llm.json` and the per-page JSON-LD modules used by this benchmark tool, use our sister project: **[LangshakeIt CLI](https://github.com/langshake/langshakeit)**.
+To generate `.well-known/llm.json` and the per-page JSON-LD modules used by this benchmark tool, use our sister project: **[LangshakeIt CLI](https://github.com/langshake/langshake-it)**.
 
 LangshakeIt is the easiest way to make your website AI- and LLM-friendly by extracting and publishing structured, verifiable data for every page.
 
-### 🔧 What It Does
+### What It Does
 
 - Extracts **Schema.org-compliant JSON-LD** from your built static site (no framework lock-in)
 - Outputs **per-page JSON** files (with checksums) and a global `.well-known/llm.json` index
@@ -197,7 +197,7 @@ LangshakeIt is the easiest way to make your website AI- and LLM-friendly by extr
 - Supports **optional LLM context** via `llm_context.json` (e.g., ethical principles, usage notes)
 - Includes smart caching and auto-detection of your site's public base URL
 
-## 🌍 Get Involved
+## Get Involved
 
 LangShake is fully open source (MIT) and community-driven.
 
@@ -207,19 +207,19 @@ We welcome:
 * Toolmakers who want to integrate LangShake support
 * Contributors to help expand crawler compatibility or reporting
 
-👉 GitHub: [github.com/langshake](https://github.com/langshake)
+GitHub: [github.com/langshake](https://github.com/langshake)
 
-## 🧭 Roadmap
+## Roadmap
 
 * [ ] Add resource usage and impact profiling (CPU, memory)
 * [ ] Support fallback sitemaps when `.llm.json` is missing
 * [ ] Integrate with third-party SEO tools
 * [ ] Submit LangShake Sitemap extension to W3C
 
-## 📝 License
+## License
 
 MIT — Free to use, fork, improve, and adapt.
 
-## 🤝 Thanks
+## Thanks
 
 This project was inspired by the growing need for **verifiable**, **trustworthy**, and **machine-optimized** content delivery. We believe LangShake can be the `robots.txt` of the AI era.
