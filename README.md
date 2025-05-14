@@ -112,6 +112,24 @@ console.log(result.human); // Human-readable summary
 }
 ```
 
+## Metrics Collected
+
+| Category     | Metric                                                                                 |
+| ------------ | --------------------------------------------------------------------------------------- |
+| ⚡ Speed      | Avg page extraction time, total duration, requests per second (RPS)                    |
+| 🧠 Accuracy   | Schema match (true/false), extraction correctness                                      |
+| 🔐 Trust      | Checksum/Merkle root verification, validation status                                   |
+| 📊 Resources  | CPU usage (user/system), memory usage (start/end/peak), network (bytes in/out), disk I/O |
+| 🌐 Network    | HTTP status codes, total requests, average request time                                |
+| ❗ Errors     | Error count, error details (per URL and message)                                        |
+| 🧵 Concurrency| Max parallel requests observed                                                          |
+
+## Shakeproof Benchmark Report
+
+After each benchmark run, Shakeproof automatically generates a detailed markdown report summarizing the comparison between LangShake and traditional crawling. This report includes side-by-side metrics, performance savings, per-page checksums, and Merkle root validation, providing a clear, human-readable overview of extraction speed, resource usage, and data integrity.
+
+See an example: [output/report.xevi.work.md](output/report.xevi.work.md)
+
 ## Architecture Overview
 
 ```
@@ -144,18 +162,6 @@ shake-proof/
 │       ├── traditional/      # HTML fixture files for traditional crawler
 │       └── langshake/        # JSON fixture files for langshake protocol
 ```
-
-## Metrics Collected
-
-| Category     | Metric                                                                                 |
-| ------------ | --------------------------------------------------------------------------------------- |
-| ⚡ Speed      | Avg page extraction time, total duration, requests per second (RPS)                    |
-| 🧠 Accuracy   | Schema match (true/false), extraction correctness                                      |
-| 🔐 Trust      | Checksum/Merkle root verification, validation status                                   |
-| 📊 Resources  | CPU usage (user/system), memory usage (start/end/peak), network (bytes in/out), disk I/O |
-| 🌐 Network    | HTTP status codes, total requests, average request time                                |
-| ❗ Errors     | Error count, error details (per URL and message)                                        |
-| 🧵 Concurrency| Max parallel requests observed                                                          |
 
 ## Testing
 
