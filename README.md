@@ -1,4 +1,4 @@
-# 🌐 Shakeproof Benchmark CLI
+# Shakeproof Benchmark CLI
 
 **Shakeproof Benchmark CLI** is an open-source benchmarking tool designed to compare **traditional web scraping** against the **LangShake Protocol**—a new standard for AI-optimized, verifiable, structured content delivery.
 
@@ -48,7 +48,7 @@ npm link   # For global CLI access (development)
 ### CLI
 
 ```bash
-shakeproof --url https://example.com --method both --json
+shakeproof --url https://example.com --json
 ```
 
 Options:
