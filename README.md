@@ -34,6 +34,11 @@ This CLI measures:
 - Fixture-driven Vitest test suite (real extraction, error cases, checksum logic)
 - CLI and SDK are covered with integration and unit tests
 
+### Security Features
+- **URL Validation**: Prevents `data:` URLs to protect against CVE-2025-58754 DoS attacks
+- **Protocol Restrictions**: Only allows HTTP, HTTPS, and `file:` URLs for safe crawling
+- **Input Sanitization**: Validates all user-provided URLs before processing
+
 ## Installation
 
 ```bash

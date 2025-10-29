@@ -8,6 +8,7 @@ import { URL } from 'url';
 import { discoverDomainUrls } from '../crawlers/traditional.js';
 import pLimit from 'p-limit';
 import { execSync } from 'child_process';
+import { validateUrl } from '../utils/urlValidation.js';
 
 /**
  * LangShake CLI entry point for benchmarking web scraping methods.
@@ -59,7 +60,11 @@ async function promptUser() {
       type: 'input',
       name: 'url',
       message: 'Enter the target URL or domain:',
-      validate: input => input && input.trim() ? true : 'URL/domain is required.'
+      validate: input => {
+        if (!input || !input.trim()) return 'URL/domain is required.';
+        const validation = validateUrl(input.trim());
+        return validation.isValid ? true : validation.error;
+      }
     },
     {
       type: 'list',
@@ -138,6 +143,13 @@ async function main() {
   }
   if (!cliOptions.url) {
     console.error('Usage: node menu.js --url <target_url> --method <traditional|langshake|both>');
+    process.exit(1);
+  }
+
+  // Validate URL for security (prevents data: URL DoS attacks)
+  const urlValidation = validateUrl(cliOptions.url);
+  if (!urlValidation.isValid) {
+    console.error(`❌ Invalid URL: ${urlValidation.error}`);
     process.exit(1);
   }
   if (!cliOptions.concurrency || !Number.isInteger(cliOptions.concurrency) || cliOptions.concurrency <= 0) {
